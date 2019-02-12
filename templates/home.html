@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="./css/style.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="jumbotron">
+				<h1> Welcome to Online Diabetic Tester</h1>
+		</div>
+		<h2>Please Enter the details to know type of Diabetes : </h2>
+		<form action="{{ url_for('predict')}}" method="POST">
+			<table class="table">
+				<tr>	<td>Age</td><td> <input type="number" required min=2 max=100 name="age"  /></td>	</tr>
+				<!-- <tr>	<td>Gender</td><td> <input type="text" name="gender"/> </td></tr> -->
+				<tr>
+					<td> Gender </td>
+					<td>
+						<select name="gender">
+							<option value="0">Male</option>
+							<option value="1">Female</option>
+						</select>
+					</td>
+				</tr>
+
+				<tr>	<td>weight (10-200) </td><td> <input type="number" step="any" min=10 max=200 required name="weight"/> </td></tr>
+				<tr>	<td>height (10-250) </td><td> <input type="number" step="any" min=10 max=250 required name="height"/> </td></tr>
+				<!-- <tr>	<td>BP</td><td> <input type="text" name="bp"/> </td></tr> -->
+				<tr>	<td>BMI (10-50)</td><td> <input type="number" step="any" min=10 max=50 required name="bmi"/> </td>	</tr>
+				<tr>	<td>FBS (100-300)</td><td> <input type="number" step="any" required  min=100 max=300  name="fbs"/> </td>	</tr>
+				<tr>	<td>PPBS (100-300)</td><td> <input type="number"  step="any" required min=100 max=300 name="ppbs"/> </td></tr>
+				<tr>	<td>HBa1c (5-15)</td><td> <input type="number" step="any" min=5 max=15 required name="hba1c"/> </td>	</tr>
+				<tr>	<td>TSH (0-10)</td><td> <input type="number" step="any" required min=0 max=10 name="tsh"/> </td>	</tr>
+				<tr>	<td>S.Creat (0-10)</td><td> <input type="number" step="any" min=0 max=10 required name="screat"/> </td></tr>
+				<tr> <td colspan="2"> <input type="submit" class="btn-info" value="predict"> </td></tr>
+			</table>
+
+		</form>
+<!-- Male = 0 , Female = 1 -->
+		<footer class="page-footer ">
+				<div class="footer-copyright text-center py-3">© 2018 Copyright:
+				  <a href=""> Vnr Vjiet </a>
+				</div>
+		</footer>
+
+	</div>
+</body>
+</html>

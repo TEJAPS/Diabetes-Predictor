@@ -1,0 +1,15 @@
+footer{
+  padding: 50px;
+  background-color: #2BBBAD; 
+  margin-bottom: 10px;
+  font-size: 38px;
+  max-width: 100%;
+}
+.jumbotron{
+  margin-top: 10px;
+  background-color : #2BBBAD !important ;
+}
+.container-fluid{
+  background-color: lightgreen;
+  
+}
